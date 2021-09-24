@@ -1,7 +1,7 @@
 FROM node:dubnium-alpine AS base
 RUN apk -U add curl
-const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
 WORKDIR /usr/src/app
+ENV CONTENT_API_URL http://localhost:3001
 EXPOSE 3000
 
 FROM node:dubnium AS build
